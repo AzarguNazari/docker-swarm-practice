@@ -5,7 +5,7 @@
 `docker stack deploy --compose-file docker-compose.yml test-nginx`
 
 ## Note
-Before doing the stack deployment, we should have already created the swarm nodes. If you want to create `docker-machine` for test purpose, following the below code:
+Before doing the stack deployment, we should have already created the swarm nodes. If you want to create `docker-machine` for test purpose, follow the below guide:
 - We create 3 docker-machine (virtual machines) for experiment purpose
 - `docker-machine create --driver virtualbox node1`, `docker-machine create --driver virtualbox node2`, `docker-machine create --driver virtualbox node3` 
 - To see the list of created virtual machines `vboxmanage list vms`
