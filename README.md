@@ -7,7 +7,7 @@
 ## Note
 Before doing the stack deployment, we should have already created the swarm nodes. If you want to create `docker-machine` for test purpose, following the below code:
 - We create 3 docker-machine (virtual machines) for experiment purpose
-- `for i in node{1..3}; do docker-machine create --driver virtualbox $i; node`
+- `docker-machine create --driver virtualbox node1`, `docker-machine create --driver virtualbox node2`, `docker-machine create --driver virtualbox node3` 
 - To see the list of created virtual machines `vboxmanage list vms`
 - By default the docker swarm is inactive, so to activate it, follow: `docker swarm init --advertise-addr IP_ADDRESS_OF_MASTER_NODE`. To know the IP address of master node, `ip a s`
 - To join the two other nodes into docker swarm cluster `docker swarm join-token worker` on node1 (master node), copy the generated token and paste it on two nodes (node1 and node2)
