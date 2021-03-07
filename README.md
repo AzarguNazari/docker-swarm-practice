@@ -14,7 +14,28 @@ Before doing the stack deployment, we should have already created the swarm node
 - To run the deployment stack from manager node (node1), type `docker-machine env node1` and then `eval $(docker-machine env node1)`
 - To deploy the stack `docker stack deploy --compose-file docker-compose.yml dicurtus`
 
+## Create
+- CLI way:
+  ```
+    docker service create nginx
+    docker service create --name nginx nginx
+    docker service create --name nginx nginx 
+  ```
+
+- Docker Compose way:
+```
+version: '3.3'
+services:
+  nginx:
+    image: nginx
+    deploy:
+      replicas: 1
+```
+- To deploy: `docker stack deploy -c docker-compose.yml nginx-deployment`
+
 ## Volume
+
+
 
 ## Networking
 
