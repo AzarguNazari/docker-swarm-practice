@@ -13,3 +13,20 @@ Before doing the stack deployment, we should have already created the swarm node
 - To join the two other nodes into docker swarm cluster `docker swarm join-token worker` on node1 (master node), copy the generated token and paste it on two nodes (node1 and node2)
 - To run the deployment stack from manager node (node1), type `docker-machine env node1` and then `eval $(docker-machine env node1)`
 - To deploy the stack `docker stack deploy --compose-file docker-compose.yml dicurtus`
+
+## Volume
+
+## Networking
+
+
+## Logging
+
+## Scaling & replicas
+
+## Rollback Update
+
+
+## Monitoring
+
+## Health Check
+
