@@ -1,8 +1,21 @@
  
 # Deployment on Docker swarm
 
+## Create a cluster of 3 Swarm nodes (one master and two clients) on VirtualBox
+```bash
+docker-machine create --driver virtualbox node1
+docker-machine create --driver virtualbox node2
+docker-machine create --driver virtualbox node3
+```
+- ssh to one of the node `docker-machine ssh node1`
+- initialize docker manager `docker swarm init --advertise-addr="address-of-current-node"`
+- copy the generated command which contains the token and paste it to each of the worker nodes. So, each worker node will join the swarm cluster.
+
+
 ## Deploy stack
-`docker stack deploy --compose-file docker-compose.yml test-nginx`
+```bash
+stack deploy --compose-file docker-compose.yml test-nginx
+```
 
 ## Note
 Before doing the stack deployment, we should have already created the swarm nodes. If you want to create `docker-machine` for test purpose, follow the below guide:
@@ -16,14 +29,14 @@ Before doing the stack deployment, we should have already created the swarm node
 
 ## Create
 - CLI way:
-  ```
+  ```bash
     docker service create nginx
     docker service create --name nginx nginx
     docker service create --name nginx nginx 
   ```
 
 - Docker Compose way:
-```
+```bash
 version: '3.3'
 services:
   nginx:
